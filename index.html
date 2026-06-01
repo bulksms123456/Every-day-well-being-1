@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Every Day Well-being | Wellness & Fitness</title>
+  <!-- Google Fonts + simple reset & base style -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fbf7;
+      color: #1e2a2c;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* header & nav */
+    header {
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(0px);
+    }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #2b7a4b, #4c9f70);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo p {
+      font-size: 0.75rem;
+      color: #5f6c6e;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2d3e40;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #2b7a4b;
+    }
+
+    /* general sections */
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid #e2ebe5;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1f3e38;
+      letter-spacing: -0.2px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #4c9f70;
+      border-radius: 4px;
+    }
+
+    /* Hero / main wellness area */
+    .hero {
+      background: linear-gradient(120deg, #eafaf1 0%, #ffffff 100%);
+      border-radius: 0 0 2rem 2rem;
+      margin-top: -1px;
+      padding: 3rem 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e4a3b;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      background: #d9f0e3;
+      color: #2b7a4b;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .address-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.2rem 1.8rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+      border: 1px solid #ddebe4;
+      flex: 0.8;
+    }
+
+    .address-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-info {
+      margin-top: 1rem;
+    }
+
+    /* page card style for policies & terms, contact */
+    .legal-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e2ebe5;
+    }
+
+    .legal-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #2b7a4b;
+    }
+
+    .legal-card h4 {
+      margin: 1.2rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .legal-card p, .legal-card li {
+      color: #2c3e3a;
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ecf3ef;
+      padding-bottom: 0.8rem;
+    }
+
+    .contact-icon {
+      font-weight: 700;
+      min-width: 80px;
+      color: #2b7a4b;
+    }
+
+    .map-placeholder {
+      background: #e9f3ef;
+      padding: 1rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: #1e2e2a;
+      color: #d4e2dc;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-copyright {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #cfe6de;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    button, .btn {
+      background: #2b7a4b;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-small {
+      font-size: 0.8rem;
+      background: #4c9f70;
+    }
+
+    @media (max-width: 750px) {
+      .nav-bar {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .hero-content h2 {
+        font-size: 1.8rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .legal-card {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-bar">
+    <div class="logo">
+      <h1>Every Day Well-being</h1>
+      <p>Wellness & Fitness · Mindful Living</p>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Home / main section (includes organization details and address) -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge">✦ Holistic wellness hub</span>
+        <h2>Nurture your body,<br> calm your mind</h2>
+        <p style="margin: 1rem 0 1.5rem; font-size: 1.05rem;">Every Day Well-being is your trusted partner in fitness, nutrition, and mindful practices. We believe in sustainable health — one small step every day.</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <span class="btn" style="background:#2b7a4b;">Start your journey</span>
+          <span class="btn btn-small" style="background: #e1efe8; color:#1e4a3b;">Explore programs</span>
+        </div>
+      </div>
+      <div class="address-card">
+        <h3>📍 Visit our wellness space</h3>
+        <p><strong>Every Day Well-being</strong><br>
+        Type of Organization: <strong>Wellness and Fitness</strong><br>
+        Gopur Square, Indore<br>
+        Madhya Pradesh - 452001<br>
+        India</p>
+        <div class="contact-info">
+          📧 priyankaj1605@gmail.com<br>
+          📞 +91 98765 43210 (support)
+        </div>
+        <div class="map-placeholder" style="margin-top: 1rem; background:#e2f0ea;">
+          🗺️ Gopur Square, Indore — Easy access, community wellness hub
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY SECTION -->
+  <section id="privacy">
+    <div class="container">
+      <div class="legal-card">
+        <h3>🔒 Privacy Policy</h3>
+        <p><strong>Effective Date:</strong> January 1, 2025</p>
+        <p>Every Day Well-being (“we”, “us”, “our”) respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard information when you interact with our wellness services, website, or visit our center at Gopur Square, Indore.</p>
+        
+        <h4>1. Information We Collect</h4>
+        <p>We may collect personal information such as your name, email address (priyankaj1605@gmail.com for correspondence), phone number, fitness goals, and payment details when you register for classes or consultations. Non-personal data includes browser type, device info, and site usage via cookies.</p>
+        
+        <h4>2. How We Use Your Information</h4>
+        <ul>
+          <li>To provide fitness coaching, wellness plans, and class updates.</li>
+          <li>To communicate important notices, newsletters, or promotional offers (opt-out available).</li>
+          <li>To improve our website, services, and customer experience.</li>
+          <li>To comply with legal obligations in Madhya Pradesh, India.</li>
+        </ul>
+
+        <h4>3. Data Sharing & Security</h4>
+        <p>We do not sell or rent your personal data. We may share information with trusted third-party payment gateways or IT service providers under strict confidentiality. We implement reasonable security measures to protect against unauthorized access.</p>
+
+        <h4>4. Your Rights</h4>
+        <p>You have the right to access, correct, or delete your personal data. For any privacy-related requests, please contact us at priyankaj1605@gmail.com or visit our center.</p>
+
+        <h4>5. Cookies & Tracking</h4>
+        <p>Our website uses essential cookies for functionality. You may adjust browser settings to refuse cookies, but some features may be limited.</p>
+
+        <p><em>This privacy policy may be updated periodically. Please review it regularly.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS AND CONDITIONS SECTION -->
+  <section id="terms">
+    <div class="container">
+      <div class="legal-card">
+        <h3>📜 Terms and Conditions</h3>
+        <p><strong>Last Updated:</strong> March 2025</p>
+        <p>Welcome to Every Day Well-being. By accessing our website, booking services, or visiting our location at Gopur Square, Indore, you agree to comply with the following terms.</p>
+
+        <h4>1. Use of Services</h4>
+        <p>Our wellness and fitness programs are designed for general health improvement. Before beginning any fitness regimen, we recommend consulting a physician. You acknowledge that individual results may vary.</p>
+
+        <h4>2. Bookings & Payments</h4>
+        <p>All class packages, personal training sessions, or workshop fees must be paid in advance unless otherwise agreed. Cancellations made within 6 hours of the session may not be eligible for a refund or credit. No-shows are charged in full.</p>
+
+        <h4>3. Code of Conduct</h4>
+        <p>Participants must respect trainers, staff, and other members. Harassment, unsafe behavior, or damage to property will result in immediate termination of membership without refund.</p>
+
+        <h4>4. Intellectual Property</h4>
+        <p>All content on this website — including text, graphics, logos, and workout plans — is the property of Every Day Well-being. Unauthorized reproduction is prohibited.</p>
+
+        <h4>5. Limitation of Liability</h4>
+        <p>To the fullest extent permitted by Indian law, Every Day Well-being shall not be liable for any indirect, incidental, or consequential injuries arising from the use of our facilities or advice. You participate in activities at your own risk.</p>
+
+        <h4>6. Governing Law</h4>
+        <p>These terms are governed by the laws of Madhya Pradesh, India. Any disputes shall be resolved in the courts of Indore.</p>
+
+        <p>If you have any questions, please contact us at <strong>priyankaj1605@gmail.com</strong> or visit our center.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PAGE (includes email, address, etc) -->
+  <section id="contact">
+    <div class="container">
+      <div class="legal-card" style="background: #fefef9;">
+        <h3>📞 Contact Us</h3>
+        <p>We’d love to hear from you! Reach out for class schedules, corporate wellness programs, or any queries.</p>
+        <div class="contact-details" style="margin: 1.5rem 0;">
+          <div class="contact-row"><span class="contact-icon">📍 Address:</span> Gopur Square, Indore, Madhya Pradesh - 452001 (Next to central park)</div>
+          <div class="contact-row"><span class="contact-icon">📧 Email:</span> priyankaj1605@gmail.com</div>
+          <div class="contact-row"><span class="contact-icon">📞 Phone:</span> +91 731 400 1234 | +91 99887 66554</div>
+          <div class="contact-row"><span class="contact-icon">🕒 Hours:</span> Mon-Sat: 7:00 AM – 9:00 PM | Sunday: 8:00 AM – 1:00 PM</div>
+          <div class="contact-row"><span class="contact-icon">🌿 Social:</span> @everydaywellbeing_ind (Instagram, Facebook)</div>
+        </div>
+        <div class="map-placeholder" style="background:#e2f0ea; margin-top: 0.5rem;">
+          📍 Locate us: Landmark — Near Gopur Square flyover, above organic grocery store. Free parking available.
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.85rem;">You may also fill out a quick inquiry by emailing us or dropping by — we are committed to reply within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER with COPYRIGHT and also secondary links to policies -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms & Conditions</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-copyright">
+      © 2025 Every Day Well-being — Wellness and Fitness Organization. <br>
+      All rights reserved. Gopur Square, Indore, Madhya Pradesh 452001.
+    </div>
+    <div style="font-size: 0.7rem; margin-top: 0.6rem; opacity:0.6;">
+      Empowered by mindful fitness & community care.
+    </div>
+  </div>
+</footer>
+
+<!-- smooth scroll for anchor links with offset for sticky header -->
+<script>
+  (function() {
+    // Smooth scroll with offset for fixed header
+    document.querySelectorAll('.nav-links a, .footer-links a, .btn[href^="#"], .logo a? but we have internal nav only').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const hash = this.getAttribute('href');
+        if (hash && hash.startsWith('#')) {
+          e.preventDefault();
+          const targetId = hash.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const headerOffset = 80; // fixed header approx height
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            // Update URL without jump
+            history.pushState(null, null, hash);
+          }
+        }
+      });
+    });
+    // If page loads with a hash, scroll to it nicely
+    if (window.location.hash) {
+      setTimeout(() => {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  })();
+</script>
+
+<!-- additional simple copyright ensures dynamic year but static is fine -->
+</body>
+</html>
